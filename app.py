@@ -97,5 +97,8 @@ if audio_file is not None:
     with open(temp_audio_path, "wb") as f:
         f.write(audio_file.getbuffer())
 
+    # **Play the uploaded audio**
+    st.audio(audio_file, format="audio/wav")  # You can use the original format here, mp3/wav/flac, depending on the file type
+
     # Run prediction
     predict_audio(temp_audio_path)
